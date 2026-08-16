@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, CheckCircle, Code, Server, Brain, ExternalLink } from 'lucide-react';
+import { SOCIAL_LINKS } from '../data/socials';
 
 export function Hero() {
   return (
@@ -13,7 +14,7 @@ export function Hero() {
           Hi, I'm <span className="hero-highlight">Johat Abrego</span>
         </h1>
 
-        <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem', color: '#F0F3F8', fontWeight: '600', marginBottom: '1rem' }}>
+        <h2 className="hero-subtitle">
           Bridging Deep Learning Research & High-Performance Production Engineering
         </h2>
 
@@ -21,62 +22,23 @@ export function Hero() {
           I design, train, and deploy enterprise-grade AI applications from scratch. Specialized in autonomous LLM agents, real-time computer vision streams, 3D geospatial analytics, and robust full-stack web platforms.
         </p>
 
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
-          <a 
-            href="#projects" 
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              background: 'var(--accent-cyan)',
-              color: '#07080A',
-              fontFamily: 'var(--font-heading)',
-              fontWeight: '700',
-              padding: '0.75rem 1.5rem',
-              borderRadius: '6px',
-              textDecoration: 'none',
-              fontSize: '0.9rem'
-            }}
-          >
+        <div className="hero-cta-row">
+          <a href="#projects" className="hero-cta-btn">
             Explore 10 Featured Projects
           </a>
 
-          <div style={{ display: 'flex', gap: '0.5rem' }}>
-            <a 
-              href="mailto:johat.abrego24@gmail.com" 
-              title="Email Contact"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '42px',
-                height: '42px',
-                borderRadius: '6px',
-                background: 'var(--bg-surface)',
-                border: '1px solid var(--border-subtle)',
-                color: 'var(--text-primary)'
-              }}
-            >
+          <div className="hero-social-icons">
+            <a href={SOCIAL_LINKS.email} title="Email Contact" className="hero-social-link">
               <Mail size={18} />
             </a>
             
             {/* LinkedIn SVG */}
             <a 
-              href="https://linkedin.com" 
+              href={SOCIAL_LINKS.linkedin} 
               target="_blank" 
-              rel="noreferrer"
+              rel="noopener noreferrer"
               title="LinkedIn Profile"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '42px',
-                height: '42px',
-                borderRadius: '6px',
-                background: 'var(--bg-surface)',
-                border: '1px solid var(--border-subtle)',
-                color: 'var(--text-primary)'
-              }}
+              className="hero-social-link"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -87,21 +49,11 @@ export function Hero() {
 
             {/* GitHub SVG */}
             <a 
-              href="https://github.com" 
+              href={SOCIAL_LINKS.github} 
               target="_blank" 
-              rel="noreferrer"
+              rel="noopener noreferrer"
               title="GitHub Profile"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '42px',
-                height: '42px',
-                borderRadius: '6px',
-                background: 'var(--bg-surface)',
-                border: '1px solid var(--border-subtle)',
-                color: 'var(--text-primary)'
-              }}
+              className="hero-social-link"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
@@ -152,7 +104,7 @@ export function Hero() {
           </li>
         </ul>
 
-        <div style={{ marginTop: '0.5rem', paddingTop: '1rem', borderTop: '1px solid var(--border-subtle)', fontSize: '0.78rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
+        <div className="side-card-footer">
           LOCATION: Remote / Hybrid | OPEN TO ROLES
         </div>
       </div>
