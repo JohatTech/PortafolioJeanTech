@@ -10,7 +10,7 @@ export function Hero() {
         </div>
         
         <h1 className="hero-main-title">
-          Hi, I'm <span className="hero-highlight">Jean Tech</span>
+          Hi, I'm <span className="hero-highlight">Johat Abrego</span>
         </h1>
 
         <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem', color: '#F0F3F8', fontWeight: '600', marginBottom: '1rem' }}>
@@ -43,7 +43,7 @@ export function Hero() {
 
           <div style={{ display: 'flex', gap: '0.5rem' }}>
             <a 
-              href="mailto:contact@jeantech.ai" 
+              href="mailto:johat.abrego24@gmail.com" 
               title="Email Contact"
               style={{
                 display: 'inline-flex',

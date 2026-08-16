@@ -6,7 +6,7 @@ export function Header() {
     <header className="header-bar">
       <div className="brand-logo">
         <div className="brand-dot"></div>
-        <span>JEAN TECH // PORTFOLIO</span>
+        <span>JOHAT ABREGO // PORTFOLIO</span>
       </div>
 
       <div className="sys-telemetry">
@@ -19,7 +19,7 @@ export function Header() {
           <span>IP SANITIZED</span>
         </div>
         <a 
-          href="mailto:contact@jeantech.ai" 
+          href="mailto:johat.abrego24@gmail.com" 
           className="sys-status-pill" 
           style={{ borderColor: 'rgba(0, 229, 255, 0.4)', color: '#00E5FF', textDecoration: 'none' }}
         >
