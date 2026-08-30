@@ -11,7 +11,7 @@ const iconMap = {
 
 export function SkillsMatrix() {
   return (
-    <section className="skills-matrix-section">
+    <section id="skills" className="skills-matrix-section">
       <div className="section-header">
         <span className="micro-label">SYSTEM CAPABILITIES</span>
         <h2 className="section-title">Engineering Competencies</h2>
