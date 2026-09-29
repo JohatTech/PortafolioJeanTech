@@ -1,6 +1,7 @@
 import React from 'react';
-import { SKILL_DOMAINS } from '../data/projects';
+import { getSkillDomains } from '../data/projects';
 import { Cpu, Brain, Layers, Database } from 'lucide-react';
+import { useLanguage } from '../context/useLanguage';
 
 const iconMap = {
   Cpu: <Cpu size={18} color="#00E5FF" />,
@@ -10,18 +11,21 @@ const iconMap = {
 };
 
 export function SkillsMatrix() {
+  const { language, t } = useLanguage();
+  const skillDomains = getSkillDomains(language);
+
   return (
     <section id="skills" className="skills-matrix-section">
       <div className="section-header">
-        <span className="micro-label">SYSTEM CAPABILITIES</span>
-        <h2 className="section-title">Engineering Competencies</h2>
+        <span className="micro-label">{t.skillsSection.microLabel}</span>
+        <h2 className="section-title">{t.skillsSection.title}</h2>
         <p className="section-desc">
-          Full-stack capabilities designed for end-to-end ML product lifecycle—from raw data engineering and model training to high-availability deployment and responsive UI integrations.
+          {t.skillsSection.desc}
         </p>
       </div>
 
       <div className="skills-grid">
-        {SKILL_DOMAINS.map((domain, idx) => (
+        {skillDomains.map((domain, idx) => (
           <div className="skill-domain-card" key={idx}>
             <div className="domain-header">
               {iconMap[domain.icon]}

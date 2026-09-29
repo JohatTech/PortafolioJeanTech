@@ -1,4 +1,4 @@
-export const PROJECTS = [
+export const PROJECTS_EN = [
   {
     id: "tender-analyzer",
     title: "TenderAnalyzer AI",
@@ -32,29 +32,31 @@ export const PROJECTS = [
     id: "enterprise-vision-suite",
     title: "Enterprise Vision Suite",
     category: "Computer Vision & Edge",
-    tagline: "Scalable Real-Time Video Stream Analysis & Defect Detection Engine",
+    tagline: "Power Transmission & Energy Infrastructure Edge Inspection Pipeline",
     formerName: "ApplusVision",
     featured: true,
-    impactMetric: "Real-time 60 FPS Multi-Stream Inference",
-    description: "Industrial-grade computer vision platform built for automated visual inspection and anomaly detection across high-throughput industrial environments. Integrates custom YOLOv8 object detection, TensorRT optimization, and async video stream pipelines to detect micro-defects in real-time.",
-    techStack: ["PyTorch", "YOLOv8", "TensorRT", "C++ / Python", "FastAPI", "GStreamer", "React", "WebSockets"],
+    hasArticle: true,
+    impactMetric: "90%+ Inspection Turnaround (60 min ➔ 5 min)",
+    description: "Industrial edge computer-vision and multi-spectral processing platform designed for power transmission inspection. Evaluates YOLO and RT-DETR models for asset localization, structural defects, and thermal hotspot classification, while computing 3D catenary clearances and generating auditable engineering PDFs.",
+    techStack: ["Python", "PyTorch", "YOLO", "RT-DETR", "OpenCV", "FLIR Atlas SDK", "PyQt5", "Geospatial/GIS"],
     architecture: {
-      ingestion: "Multi-camera RTSP ingestion via GStreamer hardware-accelerated pipelines.",
-      inference: "TensorRT GPU engine batching frames with dynamic batch sizes for zero frame drops.",
-      streaming: "WebSocket event bus broadcasting high-confidence detection boxes to web client."
+      multiSensor: "Concurrent RGB 4K video and radiometric FLIR thermal stream capture via async socket bridge.",
+      edgeInference: "Multi-threaded YOLO and RT-DETR inference routines running concurrent asset and defect passes.",
+      radiometricFusion: "Two-sigma statistical anomaly model calibrated against GPS and ambient weather telemetry.",
+      reporting: "Decoupled background worker queues synthesizing georeferenced spreadsheets and engineering PDFs."
     },
     metrics: [
-      { label: "Latency", value: "12ms / Frame" },
-      { label: "Accuracy", value: "97.8% mAP@50" },
-      { label: "Concurrency", value: "16 RTSP Streams / GPU" }
+      { label: "Turnaround Time", value: "60m ➔ 5m (90%+ cut)" },
+      { label: "Thermal Analysis", value: "2σ Anomaly Model" },
+      { label: "Spatial Safety", value: "3D Catenary Clearance" }
     ],
     highlights: [
-      "Dynamic ROI masking to eliminate background noise in industrial environments.",
-      "TensorRT FP16 quantization reducing model footprint while retaining high precision.",
-      "Full-stack telemetry dashboard for anomaly tracking and automated alert triggers."
+      "Real-time multi-threaded inference evaluating YOLO & RT-DETR models on edge hardware.",
+      "Asynchronous socket bridge to FLIR Atlas SDK for calibrated 16-bit radiometric thermal frames.",
+      "Automated deliverable generation for catenary geometry, pole verticality, and radiometric audit PDFs."
     ],
     diagramType: "vision-pipeline",
-    diagramSteps: ["RTSP Stream", "Frame Buffer & Preprocess", "TensorRT GPU Inference", "Post-process & Tracker", "WebSocket Telemetry"]
+    diagramSteps: ["RGB & FLIR Feeds", "Multi-Threaded Inference", "2σ Thermal & 3D Catenary", "Worker Queues", "Auditable PDFs"]
   },
   {
     id: "auto-label-ml",
@@ -85,7 +87,7 @@ export const PROJECTS = [
   {
     id: "hr-insight-bot",
     title: "HR Insight Bot",
-    category: "NLP & Conversational AI",
+    category: "NLP & LLM Agents",
     tagline: "Enterprise RAG Assistant with Strict Role-Based Access & Policy Verification",
     formerName: "ChatBotRRHH",
     featured: false,
@@ -111,7 +113,7 @@ export const PROJECTS = [
   {
     id: "grid-expert-agent",
     title: "GridExpert AI Agent",
-    category: "Autonomous Agents & Domain AI",
+    category: "NLP & LLM Agents",
     tagline: "Specialized LLM Technical Assistant for Electrical Infrastructure Engineering",
     formerName: "ClaudiaElectricAgentExpert",
     featured: true,
@@ -137,7 +139,7 @@ export const PROJECTS = [
   {
     id: "eco-vision",
     title: "EcoVision Spatial AI",
-    category: "Geospatial & Computer Vision",
+    category: "Geospatial & 3D Analytics",
     tagline: "High-Resolution Satellite & Aerial Imagery Vegetation Detection System",
     formerName: "TreeDetection",
     featured: true,
@@ -163,7 +165,7 @@ export const PROJECTS = [
   {
     id: "cloud-storage-monitor",
     title: "CloudStorage Event Monitor",
-    category: "Cloud Engineering & ETL",
+    category: "MLOps & Data Engine",
     tagline: "Event-Driven Storage Monitoring & Automated Reporting Pipeline",
     formerName: "BlobWatcher / blob-watcher-report-generator",
     featured: false,
@@ -189,7 +191,7 @@ export const PROJECTS = [
   {
     id: "therma-data-engine",
     title: "ThermaData Engine",
-    category: "Thermal Imaging & ML Data",
+    category: "Computer Vision & Edge",
     tagline: "End-to-End Thermal Dataset Curation & Augmentation Platform",
     formerName: "ThermalDatasetGenerator / ThermalImageDatabase",
     featured: false,
@@ -215,7 +217,7 @@ export const PROJECTS = [
   {
     id: "vector-ai-engine",
     title: "VectorAI Engine",
-    category: "Computer Vision & Graphics",
+    category: "Computer Vision & Edge",
     tagline: "Deep Learning Automated Raster-to-Vector Conversion Engine",
     formerName: "VectorizerEngine",
     featured: false,
@@ -241,7 +243,7 @@ export const PROJECTS = [
   {
     id: "point-cloud-lab-3d",
     title: "PointCloud Lab 3D",
-    category: "3D Visualization & LiDAR",
+    category: "Geospatial & 3D Analytics",
     tagline: "High-Performance Browser LiDAR Point Cloud Processing Platform",
     formerName: "PointLab / Potree_project",
     featured: true,
@@ -249,7 +251,7 @@ export const PROJECTS = [
     description: "Web-based 3D point cloud visualization and spatial measurement workbench. Converts raw LAS/LAZ LiDAR datasets into spatial octree hierarchies, enabling fluid 60 FPS rendering and interactive distance, elevation, and volumetric spatial analysis directly in WebGL.",
     techStack: ["JavaScript / Three.js", "Potree Converter", "C++ / WASM", "WebGL", "Python", "Docker"],
     architecture: {
-      spatialOctree: "Multoresolution octree spatial indexing stream dynamically loading point LOD based on camera frustum.",
+      spatialOctree: "Multiresolution octree spatial indexing stream dynamically loading point LOD based on camera frustum.",
       wasmEngine: "WebAssembly compiled fast distance and point proximity calculations in browser."
     },
     metrics: [
@@ -266,7 +268,277 @@ export const PROJECTS = [
   }
 ];
 
-export const SKILL_DOMAINS = [
+export const PROJECTS_ES = [
+  {
+    id: "tender-analyzer",
+    title: "TenderAnalyzer AI",
+    category: "NLP y Agentes LLM",
+    tagline: "Agente Autónomo Empresarial para Análisis de Contratos y Licitaciones Públicas",
+    formerName: "AgentLicitaciones",
+    featured: true,
+    impactMetric: "94% de Reducción en Tiempo de Evaluación de Pliegos",
+    description: "Pipeline inteligente de agentes autónomos diseñado para analizar, resumir y correlacionar automáticamente pliegos de licitación pública de cientos de páginas, especificaciones técnicas y requisitos legales. Utiliza LLMs adaptados al dominio con extracción estructurada y búsqueda vectorial para detectar riesgos de cumplimiento y generar listas de verificación de propuestas.",
+    techStack: ["Python", "FastAPI", "LangChain / LlamaIndex", "Qdrant Vector DB", "React", "Docker", "PyMuPDF"],
+    architecture: {
+      ingestion: "OCR y segmentación de PDFs preservando la jerarquía de secciones, tablas y estructura con PyMuPDF.",
+      vectorStore: "Búsqueda híbrida (Embeddings densos + Búsqueda dispersa BM25) en Qdrant.",
+      agenticLogic: "Agente con razonamiento multi-paso y bucle de auto-verificación contra reglas estrictas de cumplimiento.",
+      frontend: "Dashboard interactivo en React con resaltado de documentos lado a lado y asistente de consultas."
+    },
+    metrics: [
+      { label: "Velocidad de Procesamiento", value: "< 45s por doc de 200 págs" },
+      { label: "Precisión de Extracción", value: "98.4% F1 Score" },
+      { label: "Detección de Cláusulas", value: "99.1% Recall de Cumplimiento" }
+    ],
+    highlights: [
+      "Segmentación de documentos sensible al diseño que preserva tablas, encabezados y anexos normativos.",
+      "Bucle de verificación multi-agente para erradicar alucinaciones en condiciones contractuales estrictas.",
+      "Matriz automatizada de puntuación de riesgos y exportación directa a formatos estructurados CSV/Excel."
+    ],
+    diagramType: "pipeline",
+    diagramSteps: ["Ingesta de Documentos", "Parseo con Detección de Estructura", "Indexación Vectorial Híbrida", "Razonador Multi-Agente", "Matriz de Cumplimiento"]
+  },
+  {
+    id: "enterprise-vision-suite",
+    title: "Enterprise Vision Suite",
+    category: "Visión Computacional y Edge",
+    tagline: "Pipeline de Inspección Edge para Redes de Transmisión e Infraestructura Energética",
+    formerName: "ApplusVision",
+    featured: true,
+    hasArticle: true,
+    impactMetric: "Reducción de Tiempo de Inspección del 90%+ (60 min ➔ 5 min)",
+    description: "Plataforma industrial de visión computacional en el edge y procesamiento multi-espectral para la inspección de líneas de transmisión eléctrica. Evalúa modelos YOLO y RT-DETR para localización de activos, detección de defectos estructurales y clasificación de anomalías térmicas, calculando distancias de catenaria 3D y generando reportes de ingeniería auditables.",
+    techStack: ["Python", "PyTorch", "YOLO", "RT-DETR", "OpenCV", "FLIR Atlas SDK", "PyQt5", "Geospatial/GIS"],
+    architecture: {
+      multiSensor: "Captura concurrente de video RGB 4K y flujos térmicos radiométricos FLIR mediante socket asíncrono.",
+      edgeInference: "Rutinas de inferencia multi-hilo con modelos YOLO y RT-DETR ejecutando pasadas paralelas de activos y fallas.",
+      radiometricFusion: "Modelo estadístico de dispersión de dos sigmas calibrado con GPS y telemetría climática ambiental.",
+      reporting: "Colas de trabajadores desacopladas en segundo plano generando hojas de cálculo georreferenciadas y PDFs de auditoría."
+    },
+    metrics: [
+      { label: "Tiempo de Revisión", value: "60m ➔ 5m (Corte del 90%+)" },
+      { label: "Análisis Térmico", value: "Modelo de Anomalía 2σ" },
+      { label: "Seguridad Espacial", value: "Holgura de Catenaria 3D" }
+    ],
+    highlights: [
+      "Inferencia multi-hilo en tiempo real ejecutando modelos YOLO y RT-DETR en hardware de borde (edge).",
+      "Puente de sockets asíncrono con el SDK FLIR Atlas para fotogramas radiométricos calibrados de 16 bits.",
+      "Generación automatizada de entregables: geometría de catenaria, verticalidad de postes e informes radiométricos."
+    ],
+    diagramType: "vision-pipeline",
+    diagramSteps: ["Streams RGB y FLIR", "Inferencia Multi-Hilo", "Térmica 2σ y Catenaria 3D", "Colas Asíncronas", "PDFs Auditables"]
+  },
+  {
+    id: "auto-label-ml",
+    title: "AutoLabel ML",
+    category: "MLOps y Motor de Datos",
+    tagline: "Herramienta de Anotación Automatizada con Modelos Fundacionales y Auto-Supervisión",
+    formerName: "AutoAnnotator",
+    featured: false,
+    impactMetric: "Aceleración de Anotación de 10x",
+    description: "Sistema MLOps para acelerar el etiquetado de datos que integra el modelo Segment Anything (SAM) y detectores zero-shot (Grounding DINO) con clasificadores personalizados. Facilita el inicio rápido de datasets para visión computacional con sugerencias automáticas de bounding boxes, polígonos y etiquetas semánticas.",
+    techStack: ["PyTorch", "SAM (Segment Anything)", "Grounding DINO", "FastAPI", "React Canvas", "ONNX Runtime"],
+    architecture: {
+      modelServer: "Servidor ONNX Runtime con aceleración WebGL para segmentación interactiva punto-a-máscara.",
+      activeLearning: "Muestreo por incertidumbre que resalta anotaciones de baja confianza para revisión con humano en el bucle."
+    },
+    metrics: [
+      { label: "Tiempo Ahorrado", value: "85% Menos Clics Manuales" },
+      { label: "Precisión de Máscara", value: "0.92 IoU vs Ground Truth" }
+    ],
+    highlights: [
+      "Anotación interactiva mediante prompts en lenguaje natural usando modelos fundacionales.",
+      "Interfaz reactiva con React Canvas y tiempos de respuesta sub-10ms para embeddings de SAM.",
+      "Exportación directa a formatos COCO, YOLO y Pascal VOC con particionado validado train/test."
+    ],
+    diagramType: "flow",
+    diagramSteps: ["Lote de Imágenes", "Pre-etiquetado Fundacional", "Muestreo Activo", "Interfaz de Revisión", "Exportación de Dataset"]
+  },
+  {
+    id: "hr-insight-bot",
+    title: "HR Insight Bot",
+    category: "NLP y Agentes LLM",
+    tagline: "Asistente RAG Empresarial con Control de Acceso Estricto y Verificación Normativa",
+    formerName: "ChatBotRRHH",
+    featured: false,
+    impactMetric: "88% de Resolución Instantánea",
+    description: "Asistente conversacional de IA seguro y consciente del contexto diseñado para responder consultas complejas sobre normativas, beneficios y políticas laborales. Construido sobre arquitectura RAG con reordenamiento semántico, citas verificables de fuentes y control de acceso basado en roles.",
+    techStack: ["Python", "LangChain", "OpenAI / Local Llama 3", "Pinecone", "Streamlit / React", "PostgreSQL"],
+    architecture: {
+      retrieval: "Recuperación en dos etapas usando Cohere Rerank para seleccionar los fragmentos normativos más relevantes.",
+      guardrails: "NeMo Guardrails para garantizar protección estricta de datos personales y rechazo de preguntas fuera de alcance."
+    },
+    metrics: [
+      { label: "Velocidad de Respuesta", value: "1.2s Mediana de Respuesta" },
+      { label: "Precisión de Citas", value: "99.4% Fuentes Verificables" }
+    ],
+    highlights: [
+      "Citas directas a nivel de página enlazadas con los manuales normativos y políticas oficiales en PDF.",
+      "Listas de control de acceso (ACL) que restringen la visibilidad según los grupos y roles de usuario.",
+      "Registro continuo de retroalimentación para consultas de baja confianza y entrenamiento de soporte."
+    ],
+    diagramType: "rag",
+    diagramSteps: ["Consulta del Empleado", "Filtro ACL y Guardrails", "Búsqueda Vectorial", "Re-Ranker Cohere", "Respuesta Fundamentada"]
+  },
+  {
+    id: "grid-expert-agent",
+    title: "GridExpert AI Agent",
+    category: "NLP y Agentes LLM",
+    tagline: "Asistente Técnico Especializado en Ingeniería y Mantenimiento de Redes Eléctricas",
+    formerName: "ClaudiaElectricAgentExpert",
+    featured: true,
+    impactMetric: "Más de 300 Normas y Estándares Eléctricos Indexados",
+    description: "Agente de IA especializado en tareas de distribución eléctrica y mantenimiento de subestaciones. Capaz de interpretar esquemas unifilares (metadatos SLD), contrastar normativas técnicas internacionales de seguridad (IEEE, IEC) y generar procedimientos de inspección paso a paso para personal técnico.",
+    techStack: ["Python", "Instructor / Pydantic", "LangGraph", "ChromaDB", "FastAPI", "React Flow"],
+    architecture: {
+      graphWorkflow: "Máquina de estados en LangGraph que define planificación estructurada, ejecución de herramientas y verificación.",
+      toolRegistry: "Herramientas de cálculo personalizadas para factores de carga de transformadores y caída de tensión."
+    },
+    metrics: [
+      { label: "Precisión en Dominio", value: "96.2% Benchmark IEEE / IEC" },
+      { label: "Velocidad de Reportes", value: "5x Más Rápido en Campo" }
+    ],
+    highlights: [
+      "Salidas estrictamente estructuradas con esquemas JSON validados para ingesta en software de ingeniería.",
+      "Memoria de agente con estado para diagnósticos secuenciales complejos de redes de potencia.",
+      "Visualizador dinámico con React Flow para monitorizar los pasos de razonamiento del agente en vivo."
+    ],
+    diagramType: "agent-graph",
+    diagramSteps: ["Consulta Técnica", "Enrutador de Intención", "Consulta de Normativa", "Motor de Cálculo", "Checklist de Campo Verificado"]
+  },
+  {
+    id: "eco-vision",
+    title: "EcoVision Spatial AI",
+    category: "Analítica Geoespacial y 3D",
+    tagline: "Sistema de Detección de Vegetación en Imágenes Satelitales y Aéreas de Alta Resolución",
+    formerName: "TreeDetection",
+    featured: true,
+    impactMetric: "Más de 500k Árboles Mapeados por Sector de Vuelo",
+    description: "Pipeline geoespacial de visión computacional que procesa ortomosaicos satelitales y de drones multi-espectrales para segmentar copas individuales de árboles, calcular índices de salud vegetal NDVI y detectar invasiones de vegetación próximas a líneas de alta tensión.",
+    techStack: ["PyTorch", "U-Net / Faster R-CNN", "GDAL / Rasterio", "Shapely", "PostGIS", "Leaflet / Mapbox GL"],
+    architecture: {
+      tiling: "Fragmentación de rásteres GeoTIFF en ventana deslizante con buffers de solapamiento espacial.",
+      geospatialDB: "Integración con PostGIS mapeando centroides geométricos con soporte de proyecciones EPSG."
+    },
+    metrics: [
+      { label: "F1 de Detección", value: "0.93 Precisión" },
+      { label: "Rendimiento Espacial", value: "100 km² / hora" }
+    ],
+    highlights: [
+      "Aislamiento de copas individuales a resolución sub-métrica mediante bandas multi-espectrales.",
+      "Evaluación de riesgo de proximidad vegetación-cableado con exportación automática a capas Shapefile de GIS.",
+      "Interfaz Web GIS con renderizado dinámico de mosaicos y mapas de calor de densidad."
+    ],
+    diagramType: "gis-pipeline",
+    diagramSteps: ["Ingesta GeoTIFF", "Fragmentación Espectral", "Segmentación Profunda", "Vectorización PostGIS", "Capa Web GIS"]
+  },
+  {
+    id: "cloud-storage-monitor",
+    title: "CloudStorage Event Monitor",
+    category: "MLOps y Motor de Datos",
+    tagline: "Pipeline Orientado a Eventos para Monitoreo de Almacenamiento y Reportes Automáticos",
+    formerName: "BlobWatcher / blob-watcher-report-generator",
+    featured: false,
+    impactMetric: "Más de 100k Eventos de Almacenamiento Procesados al Día",
+    description: "Pipeline serverless guiado por eventos que monitorea buckets de almacenamiento en la nube ante la llegada de nuevos datos de campo, ejecuta validación automática de payloads, procesos de normalización ETL y genera reportes ejecutivos en PDF sin intervención humana.",
+    techStack: ["Python", "Azure Blob / AWS S3", "Funciones Serverless", "Pandas", "ReportLab", "Docker"],
+    architecture: {
+      eventTrigger: "Webhooks y Event Grid de Azure Blob Storage activando funciones serverless ultraligeras.",
+      processing: "Trabajador distribuido por lotes que procesa registros binarios y sintetiza resúmenes tabulares."
+    },
+    metrics: [
+      { label: "Disponibilidad", value: "99.99% Confiabilidad" },
+      { label: "Latencia", value: "< 2s de Disparo a Proceso" }
+    ],
+    highlights: [
+      "Mecanismo resiliente con colas de reintento y enrutamiento a Dead-Letter Queue (DLQ).",
+      "Generación automática de reportes ejecutivos en PDF con gráficos vectoriales incrustados.",
+      "Despliegue como Infraestructura como Código (IaC) para orquestación multi-entorno."
+    ],
+    diagramType: "cloud",
+    diagramSteps: ["Evento de Almacenamiento", "Cola de Mensajería", "Validación y ETL", "Generador de PDFs", "Notificación y Archivo"]
+  },
+  {
+    id: "therma-data-engine",
+    title: "ThermaData Engine",
+    category: "Visión Computacional y Edge",
+    tagline: "Plataforma Integral de Curación y Aumento Sintético de Datasets Térmicos",
+    formerName: "ThermalDatasetGenerator / ThermalImageDatabase",
+    featured: false,
+    impactMetric: "Más de 50k Fotogramas Térmicos Calibrados Gestionados",
+    description: "Motor especializado en la gestión y aumento sintético de datos para imágenes infrarrojas térmicas. Estandariza matrices radiométricas brutas de sensores FLIR, aplica transformaciones térmicas específicas y genera particiones balanceadas para entrenar modelos de mantenimiento predictivo.",
+    techStack: ["Python", "OpenCV", "NumPy", "FLIR Atlas SDK", "FastAPI", "React", "SQLite / PostgreSQL"],
+    architecture: {
+      radiometricParser: "Extracción directa de matrices de temperatura crudas de 16 bits de los metadatos térmicos.",
+      augPipeline: "Variaciones de mapas de calor, inyección de ruido térmico y alteraciones de emisividad física."
+    },
+    metrics: [
+      { label: "Velocidad de Aumento", value: "500 imgs / segundo" },
+      { label: "Calidad de Datos", value: "100% Temperatura Calibrada" }
+    ],
+    highlights: [
+      "Extracción precisa de temperatura píxel a píxel mediante calibración radiométrica.",
+      "Síntesis automatizada de anomalías térmicas para entrenar detectores de fallas incipientes.",
+      "Control de versiones de datasets y particionado hermético train/val/test sin fuga de datos."
+    ],
+    diagramType: "data-engine",
+    diagramSteps: ["Stream Térmico Crudo", "Extractor Radiométrico 16-Bit", "Aumentador Térmico", "Motor de Calidad", "Exportación para ML"]
+  },
+  {
+    id: "vector-ai-engine",
+    title: "VectorAI Engine",
+    category: "Visión Computacional y Edge",
+    tagline: "Motor de Conversión Automatizada de Ráster a Vector con Deep Learning",
+    formerName: "VectorizerEngine",
+    featured: false,
+    impactMetric: "Generación de Vectores SVG de Alta Fidelidad",
+    description: "Pipeline avanzado de vectorización gráfica que combina extracción de contornos mediante deep learning y algoritmos de ajuste de curvas para convertir diagramas técnicos y esquemas en mapas de bits en curvas Bézier SVG editables y nítidas.",
+    techStack: ["Python", "C++", "PyTorch", "OpenCV", "Potrace / Custom Bezier Fitter", "FastAPI"],
+    architecture: {
+      segmentation: "Red neuronal de refinamiento de bordes para aislar trazos de fondos texturizados.",
+      vectorizer: "Detección sub-píxel de esquinas y minimización iterativa del error en curvas de Bézier."
+    },
+    metrics: [
+      { label: "Fidelidad", value: "99.1% Precisión Geométrica" },
+      { label: "Compresión", value: "70% Reducción de Tamaño" }
+    ],
+    highlights: [
+      "Conversión sin pérdida de bocetos y planos escaneados a formatos vectoriales para CAD/SVG.",
+      "Suavizado de líneas resistente al ruido que preserva ángulos y esquinas geométricas nítidas.",
+      "API REST escalable con streaming por WebSockets para lotes masivos de alta resolución."
+    ],
+    diagramType: "graphics",
+    diagramSteps: ["Ráster de Alta Resolución", "Red de Refinamiento", "Contorneado Sub-Píxel", "Optimizador Bézier", "Salida SVG Limpia"]
+  },
+  {
+    id: "point-cloud-lab-3d",
+    title: "PointCloud Lab 3D",
+    category: "Analítica Geoespacial y 3D",
+    tagline: "Plataforma de Alto Rendimiento para Procesamiento de Nubes de Puntos LiDAR en Navegador",
+    formerName: "PointLab / Potree_project",
+    featured: true,
+    impactMetric: "Capacidad de Renderizado de +100M de Puntos en Navegador",
+    description: "Entorno interactivo en web para visualización y medición espacial de nubes de puntos 3D. Convierte datasets LiDAR en formatos LAS/LAZ a estructuras espaciales Octree, permitiendo renderizado fluido a 60 FPS y herramientas interactivas de medición de distancias, perfiles de elevación y volúmenes en WebGL.",
+    techStack: ["JavaScript / Three.js", "Potree Converter", "C++ / WASM", "WebGL", "Python", "Docker"],
+    architecture: {
+      spatialOctree: "Indexación espacial Octree multinivel que transmite dinámicamente el nivel de detalle (LOD) según la cámara.",
+      wasmEngine: "Módulos WebAssembly compilados para cálculos de distancia y proximidad espacial a máxima velocidad."
+    },
+    metrics: [
+      { label: "Tasa de Cuadros", value: "60 FPS con 50M de Puntos" },
+      { label: "Velocidad de Carga", value: "Streaming LOD Inmediato" }
+    ],
+    highlights: [
+      "Herramientas interactivas de medición espacial 3D (punto a punto, perfil altimétrico, polígono de área).",
+      "Codificación por colores según clasificaciones LiDAR (elevación, intensidad, número de retorno, RGB).",
+      "Integración fluida con almacenamiento cloud para transmitir archivos LiDAR de múltiples gigabytes."
+    ],
+    diagramType: "3d-pipeline",
+    diagramSteps: ["Ingesta LAS/LAZ", "Convertidor Octree 3D", "Servidor de Streaming LOD", "Render WebGL / Three.js", "Interfaz de Medición"]
+  }
+];
+
+export const SKILL_DOMAINS_EN = [
   {
     title: "Full-Stack System Architecture",
     icon: "Cpu",
@@ -288,3 +560,38 @@ export const SKILL_DOMAINS = [
     skills: ["Data Pipeline Orchestration", "Radiometric & Thermal Processing", "Foundation Model Pre-labeling (SAM)", "Active Learning & Model Audit", "Continuous Deployment for ML"]
   }
 ];
+
+export const SKILL_DOMAINS_ES = [
+  {
+    title: "Arquitectura de Sistemas Full-Stack",
+    icon: "Cpu",
+    skills: ["FastAPI / REST / WebSockets", "React / Vite / CSS Modular", "Docker / Contenedores", "Microservicios y Serverless", "PostgreSQL / Qdrant / Redis"]
+  },
+  {
+    title: "Ingeniería de Machine Learning e IA",
+    icon: "Brain",
+    skills: ["PyTorch / Deep Learning", "Frameworks de Agentes LLM (LangChain, LangGraph)", "Generación Aumentada por Recuperación (RAG)", "YOLOv8 y Visión Computacional", "Optimización con TensorRT"]
+  },
+  {
+    title: "Analítica Geoespacial y 3D",
+    icon: "Layers",
+    skills: ["PostGIS / GDAL / Rasterio", "Indexación Octree para LiDAR", "Renderizado 3D con WebGL / Three.js", "IA para Ortomosaicos Satelitales y UAV", "Procesamiento Multi-Espectral"]
+  },
+  {
+    title: "MLOps e Ingeniería de Datos",
+    icon: "Database",
+    skills: ["Orquestación de Pipelines de Datos", "Procesamiento Radiométrico y Térmico", "Pre-etiquetado con Modelos Fundacionales (SAM)", "Active Learning y Auditoría de Modelos", "Despliegue Continuo (CI/CD) para ML"]
+  }
+];
+
+export function getProjects(lang = 'en') {
+  return lang === 'es' ? PROJECTS_ES : PROJECTS_EN;
+}
+
+export function getSkillDomains(lang = 'en') {
+  return lang === 'es' ? SKILL_DOMAINS_ES : SKILL_DOMAINS_EN;
+}
+
+// Backward compatibility default exports
+export const PROJECTS = PROJECTS_EN;
+export const SKILL_DOMAINS = SKILL_DOMAINS_EN;

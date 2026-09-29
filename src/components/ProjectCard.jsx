@@ -1,18 +1,50 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, BookOpen, Sparkles } from 'lucide-react';
+import { hasArticle } from '../utils/articleEngine';
+import { useLanguage } from '../context/useLanguage';
 
-export function ProjectCard({ project, onSelect }) {
+export function ProjectCard({ project, onSelect, onOpenArticle }) {
+  const { t } = useLanguage();
+  const articleAvailable = hasArticle(project.id);
+
+  const handleCardClick = () => {
+    if (articleAvailable && onOpenArticle) {
+      onSelect(project);
+    } else {
+      onSelect(project);
+    }
+  };
+
+  const handleArticleBtnClick = (e) => {
+    e.stopPropagation();
+    if (onOpenArticle) {
+      onOpenArticle(project.id);
+    }
+  };
+
   return (
     <div 
       className={`project-panel ${project.featured ? 'featured-panel' : ''}`}
-      onClick={() => onSelect(project)}
+      onClick={handleCardClick}
     >
       <div className="card-top">
         <div className="card-meta">
           <span className="micro-label" style={{ fontSize: '0.68rem' }}>
             {project.category}
           </span>
-          <ArrowUpRight size={16} color="#949E9E" className="card-arrow" />
+          <div className="card-top-actions">
+            {articleAvailable && (
+              <button 
+                onClick={handleArticleBtnClick}
+                className="card-article-pill-btn"
+                title={t.projectCard.caseStudyTitle}
+              >
+                <Sparkles size={11} color="#00E5FF" />
+                <span>{t.projectCard.caseStudyBtn}</span>
+              </button>
+            )}
+            <ArrowUpRight size={16} color="#949E9E" className="card-arrow" />
+          </div>
         </div>
 
         <h3 className="card-title">
@@ -55,6 +87,19 @@ export function ProjectCard({ project, onSelect }) {
           <span className="tech-pill" key={idx}>{tech}</span>
         ))}
       </div>
+
+      {articleAvailable && (
+        <div className="card-article-cta-row">
+          <button 
+            className="card-read-article-action"
+            onClick={handleArticleBtnClick}
+          >
+            <BookOpen size={14} />
+            <span>{t.projectCard.readCaseStudyCta}</span>
+            <span className="card-cta-arrow">→</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 }

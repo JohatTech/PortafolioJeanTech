@@ -1,19 +1,31 @@
 import React from 'react';
-import { X, CheckCircle2, Cpu, Activity, Server, FileText } from 'lucide-react';
+import { X, CheckCircle2, Cpu, Activity, Server, FileText, BookOpen, ArrowRight, Sparkles } from 'lucide-react';
+import { hasArticle } from '../utils/articleEngine';
+import { useLanguage } from '../context/useLanguage';
 
-export function ProjectModal({ project, onClose }) {
+export function ProjectModal({ project, onClose, onOpenArticle }) {
+  const { t } = useLanguage();
   if (!project) return null;
+
+  const articleAvailable = hasArticle(project.id);
+
+  const handleReadArticle = () => {
+    if (onOpenArticle) {
+      onClose();
+      onOpenArticle(project.id);
+    }
+  };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close-btn" onClick={onClose} aria-label="Close details">
+        <button className="modal-close-btn" onClick={onClose} aria-label={t.projectModal.closeAria}>
           <X size={18} />
         </button>
 
         <div className="modal-header-section">
           <span className="micro-label">
-            SYSTEM DEEP DIVE // {project.category}
+            {t.projectModal.deepDive} {project.category}
           </span>
           <h2 className="modal-title">
             {project.title}
@@ -23,9 +35,26 @@ export function ProjectModal({ project, onClose }) {
           </p>
         </div>
 
+        {articleAvailable && (
+          <div className="modal-article-callout-banner">
+            <div className="modal-article-banner-text">
+              <Sparkles size={16} color="#00E5FF" />
+              <div>
+                <strong>{t.projectModal.caseStudyBannerTitle}</strong>
+                <span>{t.projectModal.caseStudyBannerDesc}</span>
+              </div>
+            </div>
+            <button onClick={handleReadArticle} className="modal-read-article-btn">
+              <BookOpen size={15} />
+              <span>{t.projectModal.readCaseStudyBtn}</span>
+              <ArrowRight size={15} />
+            </button>
+          </div>
+        )}
+
         <div className="modal-metric-card">
           <div className="modal-metric-header">
-            <Activity size={14} color="#00E5FF" /> IMPACT & PERFORMANCE METRIC
+            <Activity size={14} color="#00E5FF" /> {t.projectModal.impactMetricHeader}
           </div>
           <div className="modal-metric-value">
             {project.impactMetric}
@@ -34,7 +63,7 @@ export function ProjectModal({ project, onClose }) {
 
         <div className="modal-section">
           <h3 className="modal-section-title">
-            <FileText size={16} color="#00E5FF" /> OVERVIEW & ARCHITECTURE
+            <FileText size={16} color="#00E5FF" /> {t.projectModal.overviewHeader}
           </h3>
           <p className="modal-desc-text">
             {project.description}
@@ -44,7 +73,7 @@ export function ProjectModal({ project, onClose }) {
         {project.architecture && (
           <div className="modal-section">
             <h3 className="modal-section-title">
-              <Server size={16} color="#7C3CFF" /> PIPELINE BREAKDOWN
+              <Server size={16} color="#7C3CFF" /> {t.projectModal.pipelineHeader}
             </h3>
             <div className="modal-pipeline-grid">
               {Object.entries(project.architecture).map(([key, val]) => (
@@ -63,7 +92,7 @@ export function ProjectModal({ project, onClose }) {
 
         <div className="modal-section">
           <h3 className="modal-section-title">
-            <CheckCircle2 size={16} color="#00E5FF" /> KEY TECHNICAL HIGHLIGHTS
+            <CheckCircle2 size={16} color="#00E5FF" /> {t.projectModal.highlightsHeader}
           </h3>
           <ul className="modal-highlights-list">
             {project.highlights.map((item, idx) => (
@@ -77,7 +106,7 @@ export function ProjectModal({ project, onClose }) {
 
         <div className="modal-section">
           <h3 className="modal-section-title">
-            <Cpu size={16} color="#00E5FF" /> PRODUCTION STACK
+            <Cpu size={16} color="#00E5FF" /> {t.projectModal.stackHeader}
           </h3>
           <div className="card-tech-stack">
             {project.techStack.map((tech, idx) => (
@@ -87,8 +116,17 @@ export function ProjectModal({ project, onClose }) {
             ))}
           </div>
         </div>
+
+        {articleAvailable && (
+          <div className="modal-footer-article-action">
+            <button onClick={handleReadArticle} className="modal-bottom-article-btn">
+              <BookOpen size={16} />
+              <span>{t.projectModal.bottomCaseStudyBtn}</span>
+              <ArrowRight size={16} />
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
 }
-
