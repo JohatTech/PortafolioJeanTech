@@ -6,13 +6,13 @@ subtitle: "Real-time edge computer vision, multi-spectral thermal fusion, and 3D
 domain: "Power Transmission & Energy Infrastructure"
 role: "Lead Computer Vision & Edge AI Engineer"
 stack: ["Python", "PyTorch", "YOLO", "RT-DETR", "OpenCV", "FLIR Atlas SDK", "PyQt5", "Geospatial/GIS"]
-impact: "90%+ inspection turnaround reduction (60 min ➔ 5 min)"
+impact: "A more consistent workflow for aerial grid inspection and review."
 readTime: "4 min read"
 date: "2024"
 summary:
-  speed: "Reduced review time from 60 minutes to ~5 minutes per mission."
-  accuracy: "Objective two-sigma radiometric anomaly detection and 3D catenary clearance calculations."
-  compliance: "Direct generation of auditable client deliverables (Catenary Geometry, Verticality, and Radiometric PDFs)."
+  speed: "Automates image and telemetry processing steps in the inspection workflow."
+  accuracy: "Uses statistical thresholds to surface potential thermal anomalies for engineering review."
+  compliance: "Produces structured reports and georeferenced inspection outputs for review."
 ---
 
 > **Project Overview Domain:** Power Transmission & Energy Infrastructure
@@ -21,7 +21,7 @@ summary:
 > 
 > **Stack:** Python · PyTorch · YOLO · RT-DETR · OpenCV · FLIR Atlas SDK · PyQt5 · Geospatial/GIS
 > 
-> **Impact:** 90%+ inspection turnaround reduction (60 min ➔ 5 min)
+> **Project value:** A more consistent workflow for aerial grid inspection and review.
 
 ---
 
@@ -41,12 +41,12 @@ Radiometric frames were captured through an asynchronous socket bridge to the FL
 
 ## 4. Results
 
-The pipeline fully automated asset detection, thermal anomaly classification, and corridor safety analysis. Video and flight sensor review times dropped from sixty minutes to approximately five minutes per mission—an over 90% reduction in processing turnaround. The system generated compliant, auditable deliverables including georeferenced clearance catalogs, pole verticality assessments, and radiometric reports, significantly mitigating grid failure risks and field technician hazards.
+The pipeline brings asset localization, thermal review, and corridor analysis into a connected inspection workflow. It produces structured outputs, including georeferenced clearance catalogs, pole verticality assessments, and radiometric reports, for engineering review. The system is designed to help inspection teams review field data more consistently and prepare follow-up work.
 
 ---
 
 > 🎯 **Executive Summary of Value:**
 > 
-> - **Speed:** Reduced review time from 60 minutes to ~5 minutes per mission.
-> - **Accuracy:** Objective two-sigma radiometric anomaly detection and 3D catenary clearance calculations.
-> - **Compliance:** Direct generation of auditable client deliverables (Catenary Geometry, Verticality, and Radiometric PDFs).
+> - **Workflow:** Connects visual inspection, thermal review, and geospatial analysis.
+> - **Review:** Surfaces potential anomalies and clearance concerns for engineering assessment.
+> - **Deliverables:** Produces structured reports and georeferenced outputs.

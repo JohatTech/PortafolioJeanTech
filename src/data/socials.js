@@ -22,13 +22,13 @@ export const SOCIAL_LINKS = {
   email: formatEmail(import.meta.env.VITE_EMAIL || import.meta.env.VITE_SOCIAL_EMAIL),
 
   // 💼 LinkedIn profile URL
-  linkedin: import.meta.env.VITE_LINKEDIN_URL || import.meta.env.VITE_SOCIAL_LINKEDIN || "https://linkedin.com",
+  linkedin: import.meta.env.VITE_LINKEDIN_URL || import.meta.env.VITE_SOCIAL_LINKEDIN || "",
 
   // 🐙 GitHub profile URL
-  github: import.meta.env.VITE_GITHUB_URL || import.meta.env.VITE_SOCIAL_GITHUB || "https://github.com",
+  github: import.meta.env.VITE_GITHUB_URL || import.meta.env.VITE_SOCIAL_GITHUB || "",
 
   // ✍️ Medium profile / publications URL
-  medium: import.meta.env.VITE_MEDIUM_URL || import.meta.env.VITE_SOCIAL_MEDIUM || "https://medium.com",
+  medium: import.meta.env.VITE_MEDIUM_URL || import.meta.env.VITE_SOCIAL_MEDIUM || "",
 };
 
 

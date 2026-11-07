@@ -16,8 +16,9 @@ import {
 } from 'lucide-react';
 import { SOCIAL_LINKS } from '../data/socials';
 import { useLanguage } from '../context/useLanguage';
+import { EvidenceGallery } from './EvidenceGallery';
 
-export function ArticlePage({ article, onBack }) {
+export function ArticlePage({ article, project, onBack }) {
   const [copied, setCopied] = useState(false);
   const { t } = useLanguage();
 
@@ -145,6 +146,8 @@ export function ArticlePage({ article, onBack }) {
         </div>
       </header>
 
+      {project && <EvidenceGallery project={project} />}
+
       {/* Executive Summary of Value Callout */}
       {(article.summary?.speed || article.summary?.accuracy || article.summary?.compliance) && (
         <section className="article-exec-summary-card">
@@ -152,11 +155,6 @@ export function ArticlePage({ article, onBack }) {
             <div className="exec-badge">
               <Sparkles size={16} color="#00E5FF" />
               <span>{t.articlePage.execSummaryTitle}</span>
-            </div>
-            <div className="exec-turnaround-badge">
-              <span className="before-metric">60 min</span>
-              <span className="arrow-metric">➔</span>
-              <span className="after-metric">5 min / mission</span>
             </div>
           </div>
 
@@ -214,7 +212,7 @@ export function ArticlePage({ article, onBack }) {
               ))}
 
               {/* Special interactive architecture diagram for Technical Approach section */}
-              {(sec.title.toLowerCase().includes('approach') || sec.title.toLowerCase().includes('enfoque')) && (
+              {article.id === 'enterprise-vision-suite' && (sec.title.toLowerCase().includes('approach') || sec.title.toLowerCase().includes('enfoque')) && (
                 <div className="article-pipeline-box">
                   <div className="pipeline-box-title">
                     <Cpu size={14} color="#00E5FF" />
@@ -250,10 +248,10 @@ export function ArticlePage({ article, onBack }) {
             <span>{t.articlePage.impactOutcomeBadge}</span>
           </div>
           <h3 className="impact-summary-heading">
-            {t.articlePage.impactOutcomeHeading}
+            {article.id === 'enterprise-vision-suite' ? t.articlePage.impactOutcomeHeading : article.impact}
           </h3>
           <p className="impact-summary-text">
-            {t.articlePage.impactOutcomeText}
+            {article.id === 'enterprise-vision-suite' ? t.articlePage.impactOutcomeText : t.articlePage.caseStudyValueText}
           </p>
         </div>
       </div>

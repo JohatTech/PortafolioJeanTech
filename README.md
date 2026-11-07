@@ -1,16 +1,40 @@
-# React + Vite
+# Johat Abrego portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Bilingual React and Vite portfolio for product engineering, full-stack applications, and applied AI work.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```powershell
+npm install
+npm run dev
+```
 
-## React Compiler
+Build the production site and generate static, shareable project pages with:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```powershell
+npm run build
+```
 
-## Expanding the Oxlint configuration
+The build creates `/projects/<project-id>/` pages, page-specific metadata, and a sitemap when `VITE_SITE_URL` is configured. Add the final canonical site URL as a build environment variable before publishing. Static project routes are generated from `src/data/projects.js`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Project evidence images
+
+Place real app screenshots in `evidence_assets/<project-folder>/`. The portfolio imports PNG, JPG/JPEG, WebP, AVIF, and GIF files automatically. Use descriptive filenames and avoid including customer data, credentials, or private account information.
+
+Current folders include `SiriFruit/`, `NaraApp/`, `Enterprise Vision Suite/`, `EcoVision Spatial AI/`, `TenderAnalyzes/`, and `SuperLearn/`. Existing folders under the legacy `evidences_assets/` spelling are also supported. If a project has no images yet, its project page shows an explicitly labeled workflow preview instead of a fabricated screenshot.
+
+## Contact and deployment settings
+
+Set these Vite variables in the production build environment:
+
+- `VITE_EMAIL`
+- `VITE_LINKEDIN_URL`
+- `VITE_GITHUB_URL`
+- `VITE_MEDIUM_URL` (optional)
+- `VITE_SITE_URL` (public canonical site origin; enables canonical metadata and `sitemap.xml`)
+
+See `.env.example` for the expected format. Build-time variables are public in the shipped site and should not contain secrets.
+
+## Optional analytics
+
+The UI emits `portfolio:analytics` browser events for project views, category filters, and contact clicks. If a privacy-reviewed analytics provider is added later, the same events are also forwarded to a configured `gtag` function. No analytics provider or tracking script is loaded by default, and search terms are not recorded.

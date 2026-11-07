@@ -6,13 +6,13 @@ subtitle: "Visión computacional en el edge en tiempo real, fusión térmica mul
 domain: "Transmisión Eléctrica e Infraestructura Energética"
 role: "Ingeniero Líder de Visión Computacional e IA Edge"
 stack: ["Python", "PyTorch", "YOLO", "RT-DETR", "OpenCV", "FLIR Atlas SDK", "PyQt5", "Geospatial/GIS"]
-impact: "Reducción del 90%+ en tiempo de inspección (60 min ➔ 5 min)"
+impact: "Un flujo más consistente para la inspección y revisión aérea de redes eléctricas."
 readTime: "4 min de lectura"
 date: "2024"
 summary:
-  speed: "Reducción del tiempo de revisión de 60 minutos a ~5 minutos por misión."
-  accuracy: "Detección objetiva de anomalías radiométricas de dos sigmas y cálculo de holgura de catenaria 3D."
-  compliance: "Generación directa de entregables auditables para clientes (Geometría de Catenaria, Verticalidad y PDFs Radiométricos)."
+  speed: "Automatiza pasos de procesamiento de imágenes y telemetría dentro del flujo de inspección."
+  accuracy: "Utiliza umbrales estadísticos para señalar posibles anomalías térmicas para revisión técnica."
+  compliance: "Produce informes estructurados y resultados georreferenciados para revisión."
 ---
 
 > **Project Overview Domain:** Transmisión Eléctrica e Infraestructura Energética
@@ -21,7 +21,7 @@ summary:
 > 
 > **Stack:** Python · PyTorch · YOLO · RT-DETR · OpenCV · FLIR Atlas SDK · PyQt5 · Geospatial/GIS
 > 
-> **Impact:** Reducción del 90%+ en tiempo de inspección (60 min ➔ 5 min)
+> **Valor del proyecto:** Un flujo más consistente para la inspección y revisión aérea de redes eléctricas.
 
 ---
 
@@ -41,12 +41,12 @@ Los fotogramas radiométricos se capturaron a través de un puente de sockets as
 
 ## 4. Resultados
 
-El pipeline automatizó por completo la detección de activos, la clasificación de anomalías térmicas y el análisis de seguridad de corredores. Los tiempos de revisión de video y sensores de vuelo se redujeron de sesenta minutos a aproximadamente cinco minutos por misión: una disminución superior al 90% en el tiempo de procesamiento. El sistema generó entregables conformes y auditables, incluyendo catálogos de distancias georreferenciados, evaluaciones de verticalidad de postes e informes radiométricos, mitigando significativamente los riesgos de fallas en la red y la exposición al peligro de los técnicos en campo.
+El pipeline reúne la localización de activos, la revisión térmica y el análisis de corredores en un flujo de inspección conectado. Produce resultados estructurados, incluidos catálogos georreferenciados de holgura, evaluaciones de verticalidad de postes e informes radiométricos para revisión técnica. El sistema busca ayudar a los equipos de inspección a revisar los datos de campo con mayor consistencia y preparar el trabajo de seguimiento.
 
 ---
 
 > 🎯 **Executive Summary of Value:**
 > 
-> - **Speed:** Reducción del tiempo de revisión de 60 minutos a ~5 minutos por misión.
-> - **Accuracy:** Detección objetiva de anomalías radiométricas de dos sigmas y cálculo de holgura de catenaria 3D.
-> - **Compliance:** Generación directa de entregables auditables para clientes (Geometría de Catenaria, Verticalidad y PDFs Radiométricos).
+> - **Flujo:** Conecta inspección visual, revisión térmica y análisis geoespacial.
+> - **Revisión:** Señala posibles anomalías y preocupaciones de holgura para evaluación técnica.
+> - **Entregables:** Produce informes estructurados y resultados georreferenciados.

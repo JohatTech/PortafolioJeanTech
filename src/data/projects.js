@@ -248,7 +248,7 @@ export const PROJECTS_EN = [
     formerName: "PointLab / Potree_project",
     featured: true,
     impactMetric: "100M+ Point Render Capacity in Browser",
-    description: "Web-based 3D point cloud visualization and spatial measurement workbench. Converts raw LAS/LAZ LiDAR datasets into spatial octree hierarchies, enabling fluid 60 FPS rendering and interactive distance, elevation, and volumetric spatial analysis directly in WebGL.",
+    description: "Web-based 3D point cloud visualization and spatial measurement workbench. Converts raw LAS/LAZ LiDAR datasets into spatial octree hierarchies for streamed rendering and interactive distance, elevation, and volumetric analysis directly in WebGL.",
     techStack: ["JavaScript / Three.js", "Potree Converter", "C++ / WASM", "WebGL", "Python", "Docker"],
     architecture: {
       spatialOctree: "Multiresolution octree spatial indexing stream dynamically loading point LOD based on camera frustum.",
@@ -265,6 +265,60 @@ export const PROJECTS_EN = [
     ],
     diagramType: "3d-pipeline",
     diagramSteps: ["LAS/LAZ Input", "Octree Spatial Converter", "LOD Stream Server", "Three.js / WebGL Render", "Interactive Measurement UI"]
+  },
+  {
+    id: "sirifruit",
+    title: "SiriFruit",
+    category: "Computer Vision & Edge",
+    tagline: "Camera-assisted sales and stock management for a frozen-fruit business",
+    featured: true,
+    priority: 2,
+    impactMetric: "From package photo to a reviewable sales or stock record",
+    description: "A Spanish-language operations app for small frozen-fruit sellers. Staff photograph a product package, review the backend's flavor suggestions, correct the result when needed, then record a sale or add stock with quantity and price. The same workflow is available in Flutter mobile and a Next.js web app, backed by a FastAPI recognition service and Supabase.",
+    techStack: ["Flutter", "Next.js", "TypeScript", "FastAPI", "OpenCV", "PyTorch", "Supabase", "PostgreSQL"],
+    architecture: {
+      recognition: "Combines a MobileNetV3 visual embedding with an HSV color histogram to rank enrolled flavor references; uncertain results can be confirmed manually.",
+      operations: "A single capture flow supports sales and stock intake, while dashboards summarize revenue, gross profit, units, and flavor trends.",
+      data: "Supabase Auth, Postgres row-level policies, RPC summaries, and private package-photo storage support per-user records."
+    },
+    metrics: [
+      { label: "Primary workflow", value: "Capture · Review · Record" },
+      { label: "Available clients", value: "Flutter mobile + Next.js web" }
+    ],
+    highlights: [
+      "Human confirmation is part of the recognition flow, and corrected photos can improve a flavor's reference set.",
+      "Sales and unsold stock are recorded from the same camera-first entry flow.",
+      "Includes flavor catalog and pricing, stock actions, bookings, and sales dashboards."
+    ],
+    diagramType: "flow",
+    diagramSteps: ["Package Photo", "Flavor Suggestions", "Human Review", "Sale or Stock Record", "Business Dashboard"]
+  },
+  {
+    id: "nara-operations",
+    title: "Nara · Rental Operations",
+    category: "Full-Stack Business Apps",
+    tagline: "A private operations workspace for short-term rental owners",
+    featured: true,
+    priority: 1,
+    impactMetric: "Bookings, guest records, finances, and supplies in one workspace",
+    description: "A responsive operations dashboard that helps short-term rental owners coordinate properties, reservations, guests, payments, expenses, and supplies. The Flutter client serves web and mobile, while a FastAPI service applies booking and inventory rules over Supabase. Calendar export and optional Google Calendar synchronization help owners keep schedules aligned.",
+    techStack: ["Flutter", "Dart", "FastAPI", "Python", "Supabase Auth", "PostgreSQL", "Google Calendar API"],
+    architecture: {
+      bookingRules: "The API validates stay dates, handles overlapping reservation conflicts, and records payments against booking balances.",
+      inventory: "Atomic stock adjustments reject negative quantities, keep movement history, and record restocking costs as expenses.",
+      integrations: "Exports reservations as iCalendar and can synchronize bookings to Google Calendar when service credentials are configured."
+    },
+    metrics: [
+      { label: "Primary workflow", value: "Plan · Operate · Reconcile" },
+      { label: "Available clients", value: "Flutter web + mobile" }
+    ],
+    highlights: [
+      "Property-linked booking, guest, payment, expense, and supply records.",
+      "Dashboard summaries and calendar views support day-to-day planning.",
+      "Backend validation and database constraints protect booking dates, payment totals, and stock adjustments."
+    ],
+    diagramType: "flow",
+    diagramSteps: ["Properties & Guests", "Reservations", "Payments & Expenses", "Stock & Supplies", "Dashboard & Calendar"]
   }
 ];
 
@@ -518,7 +572,7 @@ export const PROJECTS_ES = [
     formerName: "PointLab / Potree_project",
     featured: true,
     impactMetric: "Capacidad de Renderizado de +100M de Puntos en Navegador",
-    description: "Entorno interactivo en web para visualización y medición espacial de nubes de puntos 3D. Convierte datasets LiDAR en formatos LAS/LAZ a estructuras espaciales Octree, permitiendo renderizado fluido a 60 FPS y herramientas interactivas de medición de distancias, perfiles de elevación y volúmenes en WebGL.",
+    description: "Entorno interactivo en web para visualización y medición espacial de nubes de puntos 3D. Convierte datasets LiDAR en formatos LAS/LAZ a estructuras espaciales Octree para renderizado por streaming y análisis interactivo de distancias, perfiles de elevación y volúmenes en WebGL.",
     techStack: ["JavaScript / Three.js", "Potree Converter", "C++ / WASM", "WebGL", "Python", "Docker"],
     architecture: {
       spatialOctree: "Indexación espacial Octree multinivel que transmite dinámicamente el nivel de detalle (LOD) según la cámara.",
@@ -535,52 +589,106 @@ export const PROJECTS_ES = [
     ],
     diagramType: "3d-pipeline",
     diagramSteps: ["Ingesta LAS/LAZ", "Convertidor Octree 3D", "Servidor de Streaming LOD", "Render WebGL / Three.js", "Interfaz de Medición"]
+  },
+  {
+    id: "sirifruit",
+    title: "SiriFruit",
+    category: "Visión Computacional y Edge",
+    tagline: "Registro de ventas e inventario asistido por cámara para un negocio de helados de fruta",
+    featured: true,
+    priority: 2,
+    impactMetric: "De la foto del empaque a un registro revisable de venta o inventario",
+    description: "Aplicación de operaciones en español para pequeños negocios de helados de fruta congelados. El personal fotografía el empaque, revisa las sugerencias de sabor del backend, corrige el resultado si hace falta y registra una venta o agrega inventario con cantidad y precio. El mismo flujo está disponible en Flutter móvil y una aplicación web Next.js, con un servicio de reconocimiento FastAPI y Supabase.",
+    techStack: ["Flutter", "Next.js", "TypeScript", "FastAPI", "OpenCV", "PyTorch", "Supabase", "PostgreSQL"],
+    architecture: {
+      recognition: "Combina embeddings visuales MobileNetV3 con un histograma de color HSV para ordenar referencias de sabor; los resultados inciertos pueden confirmarse manualmente.",
+      operations: "Un mismo flujo de captura permite registrar ventas o inventario, y los paneles resumen ingresos, ganancia bruta, unidades y tendencias por sabor.",
+      data: "Supabase Auth, políticas de filas en Postgres, resúmenes RPC y almacenamiento privado de fotos respaldan los registros de cada usuario."
+    },
+    metrics: [
+      { label: "Flujo principal", value: "Capturar · Revisar · Registrar" },
+      { label: "Clientes disponibles", value: "Flutter móvil + web Next.js" }
+    ],
+    highlights: [
+      "La confirmación humana forma parte del flujo y las fotos corregidas pueden ampliar las referencias de cada sabor.",
+      "Ventas e inventario no vendido se registran desde el mismo flujo de captura.",
+      "Incluye catálogo de sabores y precios, acciones de inventario, reservas y paneles de ventas."
+    ],
+    diagramType: "flow",
+    diagramSteps: ["Foto del Empaque", "Sugerencias de Sabor", "Revisión Humana", "Venta o Inventario", "Panel del Negocio"]
+  },
+  {
+    id: "nara-operations",
+    title: "Nara · Operaciones de Alojamiento",
+    category: "Aplicaciones de Negocio Full-Stack",
+    tagline: "Espacio privado de operaciones para propietarios de alquileres de corta estancia",
+    featured: true,
+    priority: 1,
+    impactMetric: "Reservas, huéspedes, finanzas e insumos en un solo espacio",
+    description: "Panel de operaciones adaptable que ayuda a propietarios de alojamientos de corta estancia a coordinar propiedades, reservas, huéspedes, pagos, gastos e insumos. El cliente Flutter funciona en web y móvil, mientras un servicio FastAPI aplica las reglas de reservas e inventario sobre Supabase. La exportación de calendarios y la sincronización opcional con Google Calendar ayudan a mantener los horarios alineados.",
+    techStack: ["Flutter", "Dart", "FastAPI", "Python", "Supabase Auth", "PostgreSQL", "Google Calendar API"],
+    architecture: {
+      bookingRules: "La API valida fechas de estadía, gestiona conflictos por reservas superpuestas y registra pagos contra saldos de reserva.",
+      inventory: "Los ajustes atómicos de stock rechazan cantidades negativas, mantienen el historial de movimientos y registran costos de reposición como gastos.",
+      integrations: "Exporta reservas en formato iCalendar y puede sincronizarlas con Google Calendar cuando se configuran credenciales de servicio."
+    },
+    metrics: [
+      { label: "Flujo principal", value: "Planear · Operar · Conciliar" },
+      { label: "Clientes disponibles", value: "Flutter web + móvil" }
+    ],
+    highlights: [
+      "Registros de reservas, huéspedes, pagos, gastos e insumos vinculados a cada propiedad.",
+      "Resúmenes del panel y vistas de calendario para la planificación diaria.",
+      "Validaciones del backend y restricciones de base de datos protegen fechas, pagos y ajustes de inventario."
+    ],
+    diagramType: "flow",
+    diagramSteps: ["Propiedades y Huéspedes", "Reservas", "Pagos y Gastos", "Inventario e Insumos", "Panel y Calendario"]
   }
 ];
 
 export const SKILL_DOMAINS_EN = [
   {
-    title: "Full-Stack System Architecture",
+    title: "Product & Full-Stack Engineering",
     icon: "Cpu",
-    skills: ["FastAPI / REST / WebSockets", "React / Vite / Modular CSS", "Docker / Containerization", "Microservices & Serverless", "PostgreSQL / Qdrant / Redis"]
+    skills: ["Flutter / Dart", "React / Next.js / Vite", "Python / FastAPI", "REST APIs and product workflows", "PostgreSQL / Supabase"]
   },
   {
-    title: "Machine Learning & AI Engineering",
+    title: "Applied AI & Computer Vision",
     icon: "Brain",
-    skills: ["PyTorch / Deep Learning", "LLM Agentic Frameworks (LangChain, LangGraph)", "Retrieval-Augmented Generation (RAG)", "YOLOv8 & Computer Vision", "TensorRT Engine Optimization"]
+    skills: ["PyTorch / deep learning", "OpenCV image processing", "Visual matching and classification", "LLM workflows and RAG", "Human review in prediction flows"]
   },
   {
-    title: "Geospatial & 3D Analytics",
-    icon: "Layers",
-    skills: ["PostGIS / GDAL / Rasterio", "LiDAR Octree Spatial Indexing", "WebGL / Three.js 3D Rendering", "Satellite & UAV Orthomosaic AI", "Multi-spectral Imaging"]
-  },
-  {
-    title: "MLOps & Data Engineering",
+    title: "Data, Integrations & Cloud",
     icon: "Database",
-    skills: ["Data Pipeline Orchestration", "Radiometric & Thermal Processing", "Foundation Model Pre-labeling (SAM)", "Active Learning & Model Audit", "Continuous Deployment for ML"]
+    skills: ["Supabase Auth and row-level security", "Postgres schemas and database functions", "Google Calendar and iCalendar", "Docker and deployment workflows", "Private file storage"]
+  },
+  {
+    title: "Geospatial & 3D Systems",
+    icon: "Layers",
+    skills: ["PostGIS / GDAL / Rasterio", "LiDAR data workflows", "WebGL / Three.js", "Satellite and UAV imagery", "Multispectral processing"]
   }
 ];
 
 export const SKILL_DOMAINS_ES = [
   {
-    title: "Arquitectura de Sistemas Full-Stack",
+    title: "Producto e Ingeniería Full-Stack",
     icon: "Cpu",
-    skills: ["FastAPI / REST / WebSockets", "React / Vite / CSS Modular", "Docker / Contenedores", "Microservicios y Serverless", "PostgreSQL / Qdrant / Redis"]
+    skills: ["Flutter / Dart", "React / Next.js / Vite", "Python / FastAPI", "APIs REST y flujos de producto", "PostgreSQL / Supabase"]
   },
   {
-    title: "Ingeniería de Machine Learning e IA",
+    title: "IA Aplicada y Visión Computacional",
     icon: "Brain",
-    skills: ["PyTorch / Deep Learning", "Frameworks de Agentes LLM (LangChain, LangGraph)", "Generación Aumentada por Recuperación (RAG)", "YOLOv8 y Visión Computacional", "Optimización con TensorRT"]
+    skills: ["PyTorch / deep learning", "Procesamiento de imágenes con OpenCV", "Comparación visual y clasificación", "Flujos LLM y RAG", "Revisión humana en flujos predictivos"]
   },
   {
-    title: "Analítica Geoespacial y 3D",
-    icon: "Layers",
-    skills: ["PostGIS / GDAL / Rasterio", "Indexación Octree para LiDAR", "Renderizado 3D con WebGL / Three.js", "IA para Ortomosaicos Satelitales y UAV", "Procesamiento Multi-Espectral"]
-  },
-  {
-    title: "MLOps e Ingeniería de Datos",
+    title: "Datos, Integraciones y Cloud",
     icon: "Database",
-    skills: ["Orquestación de Pipelines de Datos", "Procesamiento Radiométrico y Térmico", "Pre-etiquetado con Modelos Fundacionales (SAM)", "Active Learning y Auditoría de Modelos", "Despliegue Continuo (CI/CD) para ML"]
+    skills: ["Supabase Auth y seguridad por filas", "Esquemas Postgres y funciones de base de datos", "Google Calendar e iCalendar", "Docker y flujos de despliegue", "Almacenamiento privado de archivos"]
+  },
+  {
+    title: "Sistemas Geoespaciales y 3D",
+    icon: "Layers",
+    skills: ["PostGIS / GDAL / Rasterio", "Flujos de datos LiDAR", "WebGL / Three.js", "Imágenes satelitales y UAV", "Procesamiento multiespectral"]
   }
 ];
 
